@@ -1,0 +1,10 @@
+<h1> Game of Thrones</h1>
+  <% @houses.each do |house| %>
+    <p><%= house.name %></p>
+    <p><img src="<%= house.img_url %>"></img></p>
+    <p><%= house.motto %></p>
+    <p><%= house.region %></p>
+
+    <%= link_to "Peep in House", house_path(house) %> | <%= link_to 'Annihilate House', house_path(house), method: :delete, data: {confirm: "Is that truly your desire?"} %> |
+    <%= link_to "Edit House", edit_house_path(house) %>
+  <% end %>
